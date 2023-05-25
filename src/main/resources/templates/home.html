@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Fact Page</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        input[type="text"] {
+            padding: 6px;
+            width: 300px;
+        }
+
+        .edit-button {
+            display: inline-block;
+            padding: 6px 12px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .edit-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<h1 th:text="${message}"></h1>
+
+<h2>Facts:</h2>
+
+<form th:action="@{/home}" method="get">
+    <input type="text" name="search" placeholder="Search by fact..." />
+    <button type="submit" style="background-color: #007bff; color: #fff; padding: 6px 12px; border: none; cursor: pointer;">Search</button>
+</form>
+
+<table>
+    <tr>
+        <th>Fact</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="fact : ${facts}">
+        <td th:text="${fact.fact}"></td>
+        <td>
+            <a th:href="@{/fact/{id}(id=${fact.id})}" class="edit-button">Edit</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

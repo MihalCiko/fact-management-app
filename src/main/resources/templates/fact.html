@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Fact Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        .delete-button {
+            padding: 8px 16px;
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .delete-button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+<div style="width: 400px; margin: 0 auto;">
+    <h2>Fact Details:</h2>
+    <div style="background-color: #f8f9fa; padding: 20px; border-radius: 4px;">
+        <p><strong>ID:</strong> <span th:text="${fact.id}"></span></p>
+        <p><strong>Fact:</strong> <span th:text="${fact.fact}"></span></p>
+        <p><strong>Length:</strong> <span th:text="${fact.length}"></span></p>
+    </div>
+
+    <form th:action="@{/fact/{id}/delete(id=${fact.id})}" method="post" style="margin-top: 20px;">
+        <button type="submit" class="delete-button">Delete</button>
+    </form>
+</div>
+</body>
+</html>
