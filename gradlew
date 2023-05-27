@@ -195,9 +195,9 @@ fi
 
 # Collect all arguments for the java command;
 #   * $DEFAULT_JVM_OPTS, $JAVA_OPTS, and $GRADLE_OPTS can contain fragments of
-#     shell script including quotes and variable substitutions, so put them in
-#     double quotes to make sure that they get re-expanded; and
-#   * put everything else in single quotes, so that it's not re-expanded.
+#     shell script including facts and variable substitutions, so put them in
+#     double facts to make sure that they get re-expanded; and
+#   * put everything else in single facts, so that it's not re-expanded.
 
 set -- \
         "-Dorg.gradle.appname=$APP_BASE_NAME" \
@@ -211,9 +211,9 @@ then
     die "xargs is not available"
 fi
 
-# Use "xargs" to parse quoted args.
+# Use "xargs" to parse facted args.
 #
-# With -n1 it outputs one arg per line, with the quotes and backslashes removed.
+# With -n1 it outputs one arg per line, with the facts and backslashes removed.
 #
 # In Bash we could simply go:
 #
@@ -227,7 +227,7 @@ fi
 # the whole thing up as a single "set" statement.
 #
 # This will of course break if any of these variables contains a newline or
-# an unmatched quote.
+# an unmatched fact.
 #
 
 eval "set -- $(

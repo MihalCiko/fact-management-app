@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,13 +30,10 @@ public class FactProviderService {
     }
 
     /**
-     * Generates and stores random quotes in the database by hitting an external API.
-     *
-     * @param count The total number of quotes to fetch and store in the database.
-     * @return A list of quotes that have been fetched and stored in the database.
+       Generates and stores random facts in the database by hitting an external API.
      */
     public List<Fact> generate(int count) {
-        logger.info("Initiating the process to fetch " + count + " quotes");
+        logger.info("Initiating the process to fetch " + count + " facts");
         List<Fact> factList = new ArrayList<>();
         FactResponse factResponse = this.fetchFactsFromApi();
         for (int i = 0; i < count; i++) {

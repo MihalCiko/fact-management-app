@@ -1,11 +1,9 @@
-# Fact App
-The Fact App is a simple application that allows you to manage quotes and their associated tags. 
-It provides functionality to create, retrieve, update, and delete quotes. 
-One of the key features of the app is the ability to generate a daily quote based on the 
-priority of quotes with more likes.
+# Fact Management App
+The Fact App is a simple application that allows you to manage facts. 
+It provides functionality to Search, Edit and Delete facts.
 
 ## Prerequisites
-To get started with the Quota App:
+To get started with the Facts App:
 
 * Java Development Kit (JDK) 11 or higher installed
 * Gradle build tool installed
@@ -13,7 +11,7 @@ To get started with the Quota App:
 
 ## Setup
 1. Clone the repository:
-`git clone https://github.com/olgerti/daily-quota-app.git`
+`git clone https://github.com/MihalCiko/fact-management-app.git`
 
 2. Open the project in your favorite IDE.
 
@@ -23,4 +21,4 @@ To get started with the Quota App:
 5. Run the application: `./gradlew bootRun`
 
 
-The application will start running on http://localhost:8080.
+The application will start running on http://localhost:8080/home.

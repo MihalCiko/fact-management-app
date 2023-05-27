@@ -10,6 +10,8 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode
 public class FactBody {
+
     private String fact;
+
     private int length;
 }

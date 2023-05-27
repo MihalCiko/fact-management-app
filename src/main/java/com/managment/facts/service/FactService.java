@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -21,7 +20,7 @@ public class FactService {
     private FactRepository factRepository;
 
     @Value("${fact.api.url}")
-    private String quoteApiUrl;
+    private String factApiUrl;
 
     @Autowired
     public FactService(RestTemplateBuilder builder, FactRepository factRepository) {
@@ -30,37 +29,26 @@ public class FactService {
     }
 
     /**
-     * Saves a quote object to the database.
-     *
-     * @param quote The quote object to be saved in the database.
-     * @return The quote object that has been saved in the database.
+      Saves a fact object to the database.
      */
-    public Fact save(Fact quote) {
-        return factRepository.save(quote);
+    public Fact save(Fact fact) {
+        return factRepository.save(fact);
     }
 
     /**
-     * Fetches a random quote from the database, prioritizing quotes with higher likes.
-     *
-     * @return A random Quote object from the database, prioritizing quotes with higher likes.
+       Fetches a random fact from the database, prioritizing facts with higher likes.
      */
-    public Fact fetchRandomQuote() {
+    public Fact fetchRandomFact() {
         return new Fact();
     }
 
     /**
-     * Deletes all quotes from the database.
+     * Deletes all facts from the database.
      */
     public void deleteAll() {
         factRepository.deleteAll();
     }
 
-    /**
-     * Finds a quote in the database by its ID.
-     *
-     * @param id The ID of the quote to find.
-     * @return An Optional containing the quote found in the database, or an empty Optional if no quote with the specified ID exists.
-     */
     public Optional<Fact> findById(UUID id) {
         return factRepository.findById(id);
     }
@@ -71,7 +59,7 @@ public class FactService {
 
     public List<Fact> fetchAllFactsFilterBy(String search) {
         search = "%" + search + "%";
-        return factRepository.findByFactLike(search);
+        return factRepository.findByFact(search);
     }
 
     public void deleteById(UUID id) {
